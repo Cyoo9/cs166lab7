@@ -2,9 +2,18 @@ SELECT COUNT (*)
 FROM part_nyc
 WHERE on_hand > 70;
 
-SELECT COUNT(part_sfo.on_hand)
-FROM part_sfo, part_nyc, color
-WHERE part_sfo.on_hand = part_nyc.on_hand AND part_sfo.color = part_nyc.color AND part_sfo.color = color.color_id AND color_name = 'Red';
+
+SELECT SUM(on_hand) 
+FROM (
+SELECT *
+FROM part_sfo, color
+WHERE part_sfo.color = color.color_id AND color_name = 'Red'
+UNION
+SELECT *
+from part_nyc, color 
+WHERE part_nyc.color = color.color_id AND color_name = 'Red'
+) AS on_hand_parts;
+
 
 SELECT supplier_name
 FROM supplier 
@@ -22,5 +31,5 @@ UPDATE part_nyc
 SET on_hand = -10;
 
 DELETE FROM part_nyc
-WHERE on_hand < 30
+WHERE part_nyc.on_hand < 30;
 
