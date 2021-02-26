@@ -18,3 +18,9 @@ SELECT supplier_name
 FROM supplier, part_sfo
 WHERE supplier.supplier_id = part_sfo.supplier;
 
+UPDATE part_nyc
+SET on_hand = -10;
+
+DELETE FROM part_nyc
+WHERE on_hand < 30
+
