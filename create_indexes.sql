@@ -1,15 +1,15 @@
- CREATE INDEX part_nyc_on_hand
+CREATE INDEX part_nyc_on_hand
 on part_nyc
 USING BTREE
 (on_hand);
 
-CREATE INDEX part_sfo_on_hand
+/* CREATE INDEX part_sfo_on_hand
 on part_sfo
 USING BTREE 
-(on_hand);
+(on_hand); */
 
-/* 
-CREATE INDEX supplier_supplier_id
+ 
+/* CREATE INDEX supplier_supplier_id
 on supplier
 USING BTREE
 (supplier_id);
@@ -27,7 +27,7 @@ USING BTREE
 CREATE INDEX part_sfo_supplier
 on part_sfo
 USING BTREE
-(supplier); 
+(supplier);  
 
 CREATE INDEX color_color_id
 on color
@@ -42,7 +42,7 @@ USING BTREE
 CREATE INDEX part_sfo_color
 on part_sfo
 USING BTREE
-(color); */
+(color); */ 
 
 
 
