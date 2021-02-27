@@ -2,7 +2,6 @@ SELECT COUNT (*)
 FROM part_nyc
 WHERE on_hand > 70;
 
-
 SELECT SUM(on_hand) 
 FROM (
 SELECT *
